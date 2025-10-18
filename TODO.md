@@ -29,6 +29,20 @@
   - Round start/end sounds
   - Victory/defeat music
   - Ambient background music toggle
+- [ ] **Visual Feedback & Game Juice**
+  - Indicate correct picks not in the target 10 (e.g., "Good guess! But not in this round")
+  - Animations/transitions for word claims (flying speech bubbles from player)
+  - Particle effects on successful claim
+  - Screen shake on word claimed
+  - Word "pop" animation in chat
+  - Team score counter animations (number increment effects)
+  - Player name highlight pulse when they score
+- [ ] **Throwables & Emotes**
+  - Throwable items (tomatoes, emojis, confetti)
+  - Quick emote reactions (👍 👎 😂 🔥 etc.)
+  - Celebration animations on win
+  - Taunt animations
+  - "Nice!" callouts when teammate scores
 
 ### Topic System
 - [ ] **Topic Submissions**
