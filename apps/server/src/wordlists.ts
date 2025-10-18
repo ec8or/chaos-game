@@ -16,23 +16,10 @@ const lists: WordList[] = Object.entries(topicsData).map(([id, data]) => ({
 // Track used lists (will be managed by game loop per game)
 const usedListIds = new Set<string>();
 
-export function pickRandomList(excludeIds?: Set<string>): WordList {
-  // If we only have one list, return it
-  if (lists.length === 1) {
-    return lists[0]!;
-  }
-
-  // Filter out already used lists in this game
-  const availableLists = excludeIds
-    ? lists.filter(l => !excludeIds.has(l.id))
-    : lists;
-
-  // If all lists have been used, reset and pick from all
-  if (availableLists.length === 0) {
-    return lists[Math.floor(Math.random() * lists.length)]!;
-  }
-
-  return availableLists[Math.floor(Math.random() * availableLists.length)]!;
+export function pickListByIndex(roundIndex: number): WordList {
+  // Pick list in order, cycling through if we run out
+  const index = roundIndex % lists.length;
+  return lists[index]!;
 }
 
 // Seeded shuffle for reproducibility
