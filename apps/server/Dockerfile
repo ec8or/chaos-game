@@ -2,11 +2,6 @@
 FROM oven/bun:1 AS base
 WORKDIR /app
 
-# Install pnpm using standalone script
-RUN curl -fsSL https://get.pnpm.io/install.sh | sh -
-ENV PNPM_HOME="/root/.local/share/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-
 # Copy root package files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 
@@ -14,8 +9,8 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 COPY packages ./packages
 COPY apps/server ./apps/server
 
-# Install dependencies with pnpm
-RUN pnpm install --frozen-lockfile
+# Install dependencies with bun (it can handle workspaces)
+RUN bun install
 
 # Build protocol package
 WORKDIR /app/packages/protocol
