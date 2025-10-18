@@ -4,9 +4,25 @@ import { TeamPanel } from './TeamPanel';
 import { ChatFeed } from './ChatFeed';
 import { GuessInput } from './GuessInput';
 import { GameFinishedModal } from './GameFinishedModal';
+import { ReadyModal } from './ReadyModal';
 
 export function GameRoom() {
-  const { redTeam, blueTeam, redScore, blueScore, gameSummary, clearGameSummary } = useGame();
+  const {
+    redTeam,
+    blueTeam,
+    redScore,
+    blueScore,
+    gameSummary,
+    clearGameSummary,
+    roomStatus,
+    players,
+    you,
+    send,
+  } = useGame();
+
+  const handleToggleReady = (ready: boolean) => {
+    send({ type: 'ready', ready });
+  };
 
   return (
     <div className="h-screen flex flex-col bg-gray-900">
@@ -29,6 +45,11 @@ export function GameRoom() {
           <TeamPanel team="blue" players={blueTeam} score={blueScore} side="right" />
         </div>
       </div>
+
+      {/* Ready Modal - Show when idle */}
+      {roomStatus === 'idle' && (
+        <ReadyModal players={players} you={you} onToggleReady={handleToggleReady} />
+      )}
 
       {/* Game Finished Modal */}
       {gameSummary && (

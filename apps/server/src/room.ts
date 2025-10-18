@@ -42,17 +42,22 @@ export function hasMinimumPlayers(minPlayers: number = 2): boolean {
   return Object.values(room.players).filter(p => p.connected).length >= minPlayers;
 }
 
+export function hasMinimumReadyPlayers(minPlayers: number = 2): boolean {
+  return Object.values(room.players).filter(p => p.connected && p.ready).length >= minPlayers;
+}
+
 export function resetForNewGame(): void {
   room.gameNumber++;
   room.status = 'idle';
   room.roundsCompleted = 0;
   room.currentRound = undefined;
 
-  // Remove disconnected players and clear teams
+  // Remove disconnected players and reset ready state
   const connectedPlayers: typeof room.players = {};
   Object.values(room.players).forEach(player => {
     if (player.connected) {
       player.score = 0;
+      player.ready = false; // Reset ready state for new game
       connectedPlayers[player.id] = player;
     }
   });

@@ -12,6 +12,7 @@ export interface Player {
   connId: string;
   lastSeenTs: number;
   score: number;
+  ready: boolean;
 }
 
 export interface PublicPlayer {
@@ -19,6 +20,7 @@ export interface PublicPlayer {
   name: string;
   team: TeamId;
   score: number;
+  ready: boolean;
 }
 
 // Word and round types
@@ -116,6 +118,7 @@ export type ClientMsg =
   | { type: 'leave_room' }
   | { type: 'guess'; text: string }
   | { type: 'chat'; text: string }
+  | { type: 'ready'; ready: boolean }
   | { type: 'heartbeat' };
 
 // Server to Client messages

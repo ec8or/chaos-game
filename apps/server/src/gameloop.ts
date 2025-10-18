@@ -1,7 +1,7 @@
 import type { RoundState, RoundSummary, GameSummary, PlayerScore, TeamScore } from '@chaos-game/protocol';
-import { room, hasPlayers, hasMinimumPlayers, resetForNewGame } from './room';
+import { room, hasPlayers, hasMinimumPlayers, hasMinimumReadyPlayers, resetForNewGame } from './room';
 import { broadcast } from './broadcast';
-import { pickListByIndex, selectTargetWords, getListById } from './wordlists';
+import { pickRandomList, selectTargetWords, getListById } from './wordlists';
 
 const COUNTDOWN_MS = 10_000;
 const ROUND_MS = 60_000;
@@ -13,9 +13,18 @@ function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Track used lists in current game to avoid repeats within the same game
+const usedListsInGame = new Set<string>();
+
 function initRound(roundIndex: number): RoundState {
-  // Pick list in order based on round index
-  const wordList = pickListByIndex(roundIndex);
+  // Reset used lists at the start of a new game
+  if (roundIndex === 0) {
+    usedListsInGame.clear();
+  }
+
+  const wordList = pickRandomList(usedListsInGame);
+  usedListsInGame.add(wordList.id);
+
   const targetWords = selectTargetWords(wordList.id, room.gameNumber, roundIndex);
 
   const now = Date.now();
@@ -91,8 +100,8 @@ export async function startGameSupervisor(): Promise<void> {
   console.log('🎮 Game supervisor started');
 
   while (true) {
-    if (hasMinimumPlayers(2) && room.status === 'idle') {
-      console.log('Starting new game with at least 2 players...');
+    if (hasMinimumReadyPlayers(2) && room.status === 'idle') {
+      console.log('Starting new game with at least 2 ready players...');
       resetForNewGame();
 
       // Run 3 rounds

@@ -33,6 +33,7 @@ export function getOrCreatePlayer(ws: ServerWebSocket, name?: string): Player {
     connId,
     lastSeenTs: Date.now(),
     score: 0,
+    ready: false,
   };
 
   room.players[playerId] = player;
@@ -115,6 +116,19 @@ export function handlePlayerMessage(ws: ServerWebSocket, msg: ClientMsg): void {
         fromPlayerName: player.name,
         text: msg.text,
         at: Date.now(),
+      });
+      break;
+    }
+
+    case 'ready': {
+      if (!playerId) return;
+      const player = room.players[playerId];
+      if (!player) return;
+
+      player.ready = msg.ready;
+      broadcast({
+        type: 'player_list',
+        players: Object.values(room.players).map(playerToPublic),
       });
       break;
     }
@@ -247,6 +261,7 @@ function playerToPublic(player: Player): PublicPlayer {
     name: player.name,
     team: player.team,
     score: player.score,
+    ready: player.ready,
   };
 }
 
