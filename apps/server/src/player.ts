@@ -154,7 +154,16 @@ export function handlePlayerDisconnect(ws: ServerWebSocket): void {
   }
 
   if (playerId && room.players[playerId]) {
-    room.players[playerId]!.connected = false;
+    const player = room.players[playerId]!;
+    player.connected = false;
+
+    // Remove from team's playerIds array
+    const team = room.teams[player.team];
+    team.playerIds = team.playerIds.filter(id => id !== playerId);
+
+    // Delete the player entirely from room
+    delete room.players[playerId];
+
     broadcast({
       type: 'player_list',
       players: Object.values(room.players).filter(p => p.connected).map(playerToPublic),

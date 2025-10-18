@@ -90,6 +90,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
       case 'player_list':
         // Only show connected players
         setPlayers(lastMessage.players);
+        // Update 'you' if your state changed in the player list
+        if (you) {
+          const updatedYou = lastMessage.players.find((p) => p.id === you.id);
+          if (updatedYou) {
+            setYou(updatedYou);
+          }
+        }
         break;
 
       case 'team_update':
