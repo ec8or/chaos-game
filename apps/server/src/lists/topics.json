@@ -883,7 +883,7 @@
     ]
   },
   "premier_league_teams": {
-    "name": "Premier League Teams",
+    "name": "Premier League Teams 2024-25",
     "words": [
       "Arsenal",
       "Aston Villa",
@@ -894,21 +894,21 @@
       "Crystal Palace",
       "Everton",
       "Fulham",
+      "Ipswich Town",
+      "Leicester City",
       "Liverpool",
-      "Luton Town",
       "Manchester City",
       "Manchester United",
       "Newcastle United",
       "Nottingham Forest",
-      "Sheffield United",
+      "Southampton",
       "Tottenham Hotspur",
       "West Ham United",
-      "Wolverhampton Wanderers",
-      "Burnley"
+      "Wolverhampton Wanderers"
     ]
   },
-  "olympic_sports": {
-    "name": "Olympic Sports",
+  "summer_olympic_sports": {
+    "name": "Summer Olympic Sports",
     "words": [
       "Swimming",
       "Athletics",
@@ -935,7 +935,30 @@
       "Hockey",
       "Skateboarding",
       "Surfing",
-      "Sport Climbing"
+      "Sport Climbing",
+      "Equestrian",
+      "Canoeing",
+      "Beach Volleyball"
+    ]
+  },
+  "winter_olympic_sports": {
+    "name": "Winter Olympic Sports",
+    "words": [
+      "Alpine Skiing",
+      "Cross-Country Skiing",
+      "Ski Jumping",
+      "Nordic Combined",
+      "Freestyle Skiing",
+      "Snowboarding",
+      "Ice Hockey",
+      "Figure Skating",
+      "Speed Skating",
+      "Short Track Speed Skating",
+      "Curling",
+      "Bobsleigh",
+      "Skeleton",
+      "Luge",
+      "Biathlon"
     ]
   },
   "cheese_varieties": {
