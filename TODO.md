@@ -64,6 +64,12 @@
   - Team color preferences
 
 ### Gameplay Enhancements
+- [ ] **Alternative Phrases & Fuzzy Matching**
+  - Accept alternative names for words (e.g., "Aubergine" = "Eggplant")
+  - Fuzzy matching for typos and misspellings
+  - Common abbreviations (e.g., "KFC" = "Kentucky Fried Chicken")
+  - Plural/singular variations
+  - Case-insensitive matching improvements
 - [ ] **Game Modes**
   - Ranked mode with ELO ratings
   - Tournament brackets
