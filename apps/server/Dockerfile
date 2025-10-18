@@ -2,15 +2,15 @@
 FROM oven/bun:1 AS base
 WORKDIR /app
 
-# Copy root package files
+# Copy root package files (with workspaces field)
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 
 # Copy all workspace packages
 COPY packages ./packages
 COPY apps/server ./apps/server
 
-# Install dependencies with bun (it can handle workspaces)
-RUN bun install
+# Install dependencies - Bun will now link workspace packages
+RUN bun install --no-save
 
 # Build protocol package
 WORKDIR /app/packages/protocol
