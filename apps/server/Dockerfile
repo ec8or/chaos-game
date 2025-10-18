@@ -2,8 +2,10 @@
 FROM oven/bun:1 AS base
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm@9
+# Install pnpm using standalone script
+RUN curl -fsSL https://get.pnpm.io/install.sh | sh -
+ENV PNPM_HOME="/root/.local/share/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 
 # Copy root package files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
