@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node", "bun-types"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+  }
+}

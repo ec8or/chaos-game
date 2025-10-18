@@ -1,0 +1,15 @@
+{
+  "id": "cities",
+  "name": "World Cities",
+  "words": [
+    "Tokyo", "Delhi", "Shanghai", "Mumbai", "Beijing", "Cairo", "Mexico City", "São Paulo",
+    "London", "Paris", "Berlin", "Madrid", "Rome", "Athens", "Moscow", "Istanbul",
+    "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio",
+    "Toronto", "Montreal", "Vancouver", "Calgary", "Ottawa", "Edmonton", "Winnipeg",
+    "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Auckland", "Wellington",
+    "Singapore", "Hong Kong", "Seoul", "Bangkok", "Manila", "Jakarta", "Kuala Lumpur",
+    "Dubai", "Abu Dhabi", "Riyadh", "Tel Aviv", "Jerusalem", "Beirut", "Amman",
+    "Buenos Aires", "Rio de Janeiro", "Lima", "Bogotá", "Santiago", "Caracas",
+    "Nairobi", "Lagos", "Johannesburg", "Cape Town", "Casablanca", "Algiers", "Tunis"
+  ]
+}

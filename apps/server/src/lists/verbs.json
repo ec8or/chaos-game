@@ -1,0 +1,15 @@
+{
+  "id": "verbs",
+  "name": "Common Verbs",
+  "words": [
+    "run", "walk", "jump", "swim", "fly", "dance", "sing", "laugh", "cry", "smile",
+    "eat", "drink", "sleep", "wake", "sit", "stand", "lie", "kneel", "crawl", "climb",
+    "read", "write", "draw", "paint", "create", "build", "make", "break", "fix", "repair",
+    "talk", "speak", "shout", "whisper", "listen", "hear", "see", "watch", "look", "stare",
+    "think", "know", "learn", "teach", "study", "understand", "remember", "forget", "believe",
+    "love", "hate", "like", "want", "need", "hope", "wish", "dream", "imagine", "wonder",
+    "give", "take", "bring", "carry", "hold", "catch", "throw", "pull", "push", "lift",
+    "open", "close", "start", "stop", "begin", "end", "finish", "continue", "pause", "wait",
+    "play", "work", "rest", "relax", "help", "save", "protect", "fight", "win", "lose"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "colors",
+  "name": "Colors",
+  "words": [
+    "red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white",
+    "gray", "silver", "gold", "beige", "tan", "khaki", "navy", "teal", "cyan", "turquoise",
+    "indigo", "violet", "magenta", "maroon", "burgundy", "crimson", "scarlet", "vermillion",
+    "coral", "salmon", "peach", "apricot", "amber", "bronze", "copper", "rust", "sienna",
+    "olive", "lime", "mint", "emerald", "jade", "forest", "sage", "chartreuse", "moss",
+    "azure", "cobalt", "sapphire", "periwinkle", "lavender", "lilac", "mauve", "plum",
+    "ivory", "cream", "vanilla", "pearl", "alabaster", "charcoal", "ebony", "onyx", "slate"
+  ]
+}

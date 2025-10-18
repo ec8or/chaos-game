@@ -1,0 +1,13 @@
+{
+  "id": "fruits",
+  "name": "Fruits",
+  "words": [
+    "apple", "banana", "orange", "grape", "strawberry", "blueberry", "raspberry", "blackberry",
+    "cherry", "peach", "plum", "pear", "apricot", "nectarine", "mango", "papaya", "pineapple",
+    "watermelon", "cantaloupe", "honeydew", "kiwi", "dragon fruit", "passion fruit", "guava",
+    "lemon", "lime", "grapefruit", "tangerine", "clementine", "pomelo", "coconut", "avocado",
+    "fig", "date", "prune", "raisin", "cranberry", "gooseberry", "currant", "elderberry",
+    "persimmon", "pomegranate", "starfruit", "lychee", "longan", "rambutan", "mangosteen",
+    "durian", "jackfruit", "breadfruit", "plantain", "quince", "medlar", "kumquat"
+  ]
+}

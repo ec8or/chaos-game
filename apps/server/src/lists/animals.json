@@ -1,0 +1,16 @@
+{
+  "id": "animals",
+  "name": "Animals",
+  "words": [
+    "dog", "cat", "elephant", "lion", "tiger", "bear", "wolf", "fox", "rabbit", "deer",
+    "mouse", "rat", "hamster", "guinea pig", "ferret", "hedgehog", "squirrel", "chipmunk",
+    "horse", "donkey", "zebra", "giraffe", "hippo", "rhino", "buffalo", "camel", "llama",
+    "monkey", "gorilla", "chimpanzee", "orangutan", "baboon", "lemur", "koala", "panda",
+    "kangaroo", "wallaby", "opossum", "raccoon", "skunk", "otter", "beaver", "badger",
+    "seal", "walrus", "dolphin", "whale", "shark", "octopus", "squid", "jellyfish",
+    "eagle", "hawk", "owl", "parrot", "penguin", "flamingo", "peacock", "swan", "duck",
+    "chicken", "rooster", "turkey", "goose", "pigeon", "crow", "raven", "sparrow",
+    "snake", "lizard", "turtle", "tortoise", "crocodile", "alligator", "frog", "toad",
+    "butterfly", "bee", "ant", "spider", "scorpion", "ladybug", "dragonfly", "grasshopper"
+  ]
+}
