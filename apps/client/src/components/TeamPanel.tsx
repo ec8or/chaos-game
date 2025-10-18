@@ -7,7 +7,7 @@ interface TeamPanelProps {
   side: 'left' | 'right';
 }
 
-export function TeamPanel({ team, players, score, side }: TeamPanelProps) {
+export function TeamPanel({ team, players, score }: TeamPanelProps) {
   const bgColor = team === 'red' ? 'bg-red-900/30' : 'bg-blue-900/30';
   const borderColor = team === 'red' ? 'border-red-500' : 'border-blue-500';
   const textColor = team === 'red' ? 'text-red-400' : 'text-blue-400';

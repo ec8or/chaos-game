@@ -1,11 +1,9 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import type {
-  ServerMsg,
   ClientMsg,
   PublicPlayer,
   PublicRoomState,
   RoomStatus,
-  TeamId,
   GameSummary,
 } from '@chaos-game/protocol';
 import { useWebSocket } from '../hooks/useWebSocket';
