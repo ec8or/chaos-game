@@ -118,14 +118,7 @@ export async function startGameSupervisor(): Promise<void> {
         console.log(`Countdown for round ${roundIndex}...`);
         await sleep(COUNTDOWN_MS);
 
-        // Check if we still have minimum players during countdown
-        if (!hasMinimumPlayers(2)) {
-          console.log('Not enough players (need 2), aborting game');
-          room.status = 'idle';
-          break;
-        }
-
-        // Round phase
+        // Round phase (no player count check - let the game finish once started)
         const round = initRound(roundIndex);
         room.currentRound = round;
         room.status = 'in_round';
