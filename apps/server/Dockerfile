@@ -2,6 +2,9 @@
 FROM oven/bun:1 AS base
 WORKDIR /app
 
+# Install pnpm
+RUN npm install -g pnpm@9
+
 # Copy root package files
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 
@@ -9,8 +12,8 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 COPY packages ./packages
 COPY apps/server ./apps/server
 
-# Install dependencies
-RUN bun install --frozen-lockfile
+# Install dependencies with pnpm
+RUN pnpm install --frozen-lockfile
 
 # Build protocol package
 WORKDIR /app/packages/protocol
